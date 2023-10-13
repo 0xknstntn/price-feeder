@@ -43,8 +43,8 @@ export async function CmdStart(mnemonic: string, val: string) {
                 let wallet = await InitWallet(mnemonic)
                 const address = (await wallet.getAccounts())[0].address;
                 InfoLog(`using wallet=${address}`)
-                let [signClient, client] = await InitClient(rpcNetwork, wallet)
                 InfoLog(`using client=${rpcNetwork}`)
+                let [signClient, client] = await InitClient(rpcNetwork, wallet)
 
                 while(1){
                         let [oracleVotePeriod, nextBlockHeight, currentVotePeriod, indexInVotePeriod] = await CalculateVotePeriod(client)
