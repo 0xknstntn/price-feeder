@@ -1,0 +1,33 @@
+{
+  "name": "price-feeder",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run build && ts-node index.ts",
+    "build": "npx tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/QubeLedger/price-feeder.git"
+  },
+  "author": "Konstantin <konstantin@quadrate.org>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/QubeLedger/price-feeder/issues"
+  },
+  "homepage": "https://github.com/QubeLedger/price-feeder#readme",
+  "dependencies": {
+    "@cosmjs/amino": "^0.31.1",
+    "@cosmjs/stargate": "^0.31.1",
+    "colorts": "^0.1.63",
+    "dotenv": "^16.3.1",
+    "jscrypto": "^1.0.3",
+    "moment": "^2.29.4",
+    "ts-proto": "^1.161.1"
+  },
+  "devDependencies": {
+    "@types/cli-color": "^2.0.3"
+  }
+}

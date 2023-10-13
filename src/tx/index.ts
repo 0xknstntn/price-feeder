@@ -1,0 +1,2 @@
+export { typeUrlMsgAggregateExchangeRatePrevote, MakeMsgAggregateExchangeRatePrevote } from "./AggregateExchangeRatePrevote";
+export { typeUrlMsgAggregateExchangeRateVote, MakeMsgAggregateExchangeRateVote } from "./AggregateExchangeRateVote";
