@@ -11,6 +11,7 @@ import { MakeMsgAggregateExchangeRatePrevote, MakeMsgAggregateExchangeRateVote }
 import { fee } from "../constant/msg";
 import * as crypto from "crypto";
 import { GetPriceByDenom, GetDenom } from "../provider";
+import { GetPriceByDenoms } from "../provider/coinbase";
 
 async function InitWallet(mnemonic: string): Promise< DirectSecp256k1HdWallet> {
         const wallet = await DirectSecp256k1HdWallet.fromMnemonic(mnemonic, {
@@ -67,9 +68,8 @@ export async function CmdStart(mnemonic: string, val: string) {
 
                                 let salt = crypto.randomBytes(32).toString('hex');
 
-                                let denom = await GetDenom()
-
-                                let exchange_rates = await GetPriceByDenom(denom)
+                                let denoms = await GetDenom()
+                                let exchange_rates = await GetPriceByDenoms(denoms)
                                 
                                 let hash = GetAggregateVoteHash(exchange_rates, salt, val)
 
